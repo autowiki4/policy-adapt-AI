@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolicyAdaptAI - Economic Storm Protection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold">PolicyAdaptAI</span>
+                </div>
+                <div class="space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-red-600">Emergency Login</a>
+                    <a href="#" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Activate Alerts</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 py-20 text-center">
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">
+            Economic Tornado Early Warning System<br>
+            <span class="text-red-600">Protect Your Business Before the Storm Hits</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+            24/7 AI-powered monitoring of policy changes and market shocks
+        </p>
+
+        <!-- User Type Selection -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button onclick="showForm('government')" class="user-type-btn px-6 py-3 rounded-lg font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200">Government</button>
+            <button onclick="showForm('business')" class="user-type-btn px-6 py-3 rounded-lg font-semibold bg-red-100 text-red-600 hover:bg-red-200">Business</button>
+            <button onclick="showForm('individual')" class="user-type-btn px-6 py-3 rounded-lg font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200">Individual</button>
+        </div>
+
+        <!-- Forms Container -->
+        <div class="max-w-3xl mx-auto">
+            <!-- Business Form -->
+            <div id="businessForm" class="hidden bg-white p-8 rounded-xl shadow-lg">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4">Business Protection Profile</h3>
+                    <select onchange="showIndustryForm(this.value)" class="w-full p-4 border rounded-lg mb-6">
+                        <option value="">Select Industry</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="startup">Startup</option>
+                        <option value="education">Education</option>
+                        <option value="agriculture">Agriculture</option>
+                        <option value="finance">Finance</option>
+                        <option value="health">Health</option>
+                    </select>
+
+                    <!-- Manufacturing Form -->
+                    <div id="manufacturingForm" class="hidden space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Company Name</label>
+                                <input type="text" class="w-full p-3 border rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Annual Revenue ($)</label>
+                                <input type="number" class="w-full p-3 border rounded-lg">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Key Products</label>
+                            <input type="text" class="w-full p-3 border rounded-lg" placeholder="Separate with commas">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Headquarters</label>
+                                <input type="text" class="w-full p-3 border rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Factory Locations</label>
+                                <input type="text" class="w-full p-3 border rounded-lg" placeholder="Separate with commas">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Business Goals</label>
+                            <textarea class="w-full p-3 border rounded-lg h-24" placeholder="List your business objectives"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Individual Form -->
+            <div id="individualForm" class="hidden bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-red-600 mb-6">Individual Protection Profile</h3>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" class="w-full p-3 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Age</label>
+                            <input type="number" class="w-full p-3 border rounded-lg">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Annual Income ($)</label>
+                            <input type="number" class="w-full p-3 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Investment Portfolio Value ($)</label>
+                            <input type="number" class="w-full p-3 border rounded-lg">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Primary Location</label>
+                        <input type="text" class="w-full p-3 border rounded-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Retirement Plans</label>
+                        <select class="w-full p-3 border rounded-lg">
+                            <option value="">Select Pension Fund Type</option>
+                            <option value="401k">401(k)</option>
+                            <option value="ira">IRA</option>
+                            <option value="roth">Roth IRA</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-all mt-8">
+            Activate Emergency Alerts Now
+        </button>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature Cards remain same as before -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-7xl mx-auto px-4 py-8 text-center text-gray-600">
+            <p>© 2024 PolicyAdaptAI. Economic Storm Protection System</p>
+        </div>
+    </footer>
+
+    <script>
+        function showForm(userType) {
+            // Hide all forms
+            document.querySelectorAll('[id$="Form"]').forEach(form => form.classList.add('hidden'));
+            
+            // Remove active styling
+            document.querySelectorAll('.user-type-btn').forEach(btn => {
+                btn.classList.remove('bg-red-100', 'text-red-600', 'hover:bg-red-200');
+                btn.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+            });
+            
+            // Show selected form
+            document.getElementById(userType + 'Form').classList.remove('hidden');
+            event.target.classList.add('bg-red-100', 'text-red-600', 'hover:bg-red-200');
+        }
+
+        function showIndustryForm(industry) {
+            // Hide all industry forms
+            document.querySelectorAll('[id$="IndustryForm"]').forEach(form => form.classList.add('hidden'));
+            
+            if(industry) {
+                document.getElementById(industry + 'Form').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
